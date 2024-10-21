@@ -144,6 +144,6 @@ The following effort estimate has been calculated using NOP (nominal object poin
 </div>
 The following deployment diagram represents the architectural (high-level) design of the Dining Hall Appliation.
 
-![image](https://raw.githubusercontent.com/RivetingTunic22/SoftwareEngineeringProject/refs/heads/main/IMG_2160.jpeg)
+![image](https://raw.githubusercontent.com/RivetingTunic22/SoftwareEngineeringProject/688df9a8bf84f2f9bd08c2ee5ce18f69602435b6/IMG_2160.jpeg?token=GHSAT0AAAAAACXENGEEFOEUWCQLLPVCLFUKZYW3HFQ)
 
 The basic architecture of the Dining Hall app has four components: a component that runs on a mobile device, a map server, an administrative component, and a server component. Components will communicate over the Internet. The details of the architecture are specified in Figure 7.5. Notice that the administrative componet-server component communication is specified at two levels. The devices communicate using the Internet while the browser and the web server communicate using the http protocol.
