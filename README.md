@@ -57,29 +57,18 @@ The following security requirements will be satisfied.
 </div>
 The following technology plan lists potential technologies to be used in the creation of our application and a personal experience rating for each technology.
 
-| Technology | Experience Rating |
-|------------|-------------------|
-| Mobile App Technologies | |
-| iOS | None |
-| Android | Tutorial |
-| Cordova | Small Scale |
-| Windows 10 Phone | None |
-| Map Technologies | |
-| Google Maps | Tutorial |
-| Bing Maps | None |
-| Open Layers Maps | None |
-| Open Street Maps | None |
-| Application and Web Development | |
-| Java | Extensive |
-| Swift | None |
-| HTML 5 | Moderate |
-| Javascript | Moderate |
-| jQuery Mobile | Small Scale |
-| Bootstrap Framework | Tutorial |
-| Iconic Framework | None |
-| Web Server Scripting | |
-| PHP | Small Scale |
-| Microsoft ASP.NET | Extensive |
+| Technology                      | Experience Rating       |
+|---------------------------------|-------------------------|
+| **Mobile App Technologies**     |                         |
+| React                           | Moderate                |
+| Expo                            | Moderate                |
+| **Application and Web Development** |                     |
+| JavaScript                     | Moderate                |
+| HTML 5                         | Moderate                |
+| Bootstrap Framework            | Tutorial                |
+| **Web Server Scripting**        |                         |
+| Node.js                        | Moderate                |
+
 
 ## Risk Analysis
 
