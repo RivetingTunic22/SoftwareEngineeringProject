@@ -46,8 +46,11 @@ The following nonfunctional requirements will be satisfied.
 </div>
 The following security requirements will be satisfied.
 
-* Data exchanged between the Hike Admin and the ODHkr system will be encrypted. This applies to all use cases associated with the *Hike Admin* role.
-* Scripts will not be allowed in user input. This applies to the following use case - Leave a Comment on a Hike.
+* Data Encryption: All senstitive data that is exchanged between users will be encrpyted using HTTPS and Transport Layer Security (TLS) to protect against eavesdropping and data tampering.
+* Input Validation: All of the users' input will be validated and sanitized to prevent malicious data from being processed. 
+* Audit Logging: The application will maintain a comprehensive audit log to record significat actions performed by the users and admin. It will capture the user's id, timestamp, description of action, and changes made.
+* User Authentication: All users will authenticate using secure credentials (user name and password). Passwords will be stored using strong hashing algorithms.
+* Role-Based Action Control: The application will managed user permissions, and access control checks will be enforced to ensure only authroized users can perform specific actions. 
 
 <div name="technology-plan">
   <h2>Technology Plan</h2>
