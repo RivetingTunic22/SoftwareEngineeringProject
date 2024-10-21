@@ -94,15 +94,16 @@ The following technical risks and business goals have been identified and priori
 
 The following risk mitigation plan will help us to address and mitigate these risks to the extent possible.
  
-| ID | Risk | Mitigation |
-|----|------|------------|
-| Tech-R-1 | Limited experience developing mobile apps. | Schedule for and work through online tutorials |
-| Tech-R-2 | No experience accessing the GPS in a mobile app | Schedule for and work through online tutorials |
-| Tech-R-3 | Implementing offline map and GPS access is not the normal mode of map operation for a mobile app | Search for information and tutorials on offline map access |
-| Tech-R-4 | Tools needed to conduct the project such as the IDE, Visual Paradigm, Bitbucket, Markdown, and Git are new | Schedule time in the schedule to learn these tools using tutorials found online |
-| Tech-R-5 | Time for the developer to work on the project is limited due to the demands of their class schedule | Explicitly use a calendar to plan daily schedules allocating spcific time periods to work on the project |
-| Tech-R-6 | Inadequate testing does not cover requirements | Utilize automated testing tools. Make testing a priority activity |
-| Tech-R-7 | The app is susceptible to cross-site scripting attacks | Follow the OWASP guidelines for preventing cross-scripting attacks and the OWASP testing protocol |
+| ID         | Technical Risk                                                       | Business-Market | Business-Users | Business-Value |
+|------------|---------------------------------------------------------------------|-----------------|-----------------|-----------------|
+| Tech-R-1   | Limited experience developing mobile apps using React and Expo.     | -               | H               | H               |
+| Tech-R-2   | No experience implementing role-based access control in the app.    | -               | H               | H               |
+| Tech-R-3   | Ensuring data encryption and secure communication over HTTPS.        | M               | H               | H               |
+| Tech-R-4   | Tools needed for the project (e.g., React, Expo, Node.js) are new. | M               | H               | H               |
+| Tech-R-5   | Time for the developer to work on the project is limited due to class demands. | M               | -               | -               |
+| Tech-R-6   | Inadequate testing may not cover all security requirements.          | L               | -               | -               |
+| Tech-R-7   | The app is susceptible to input validation issues and XSS attacks.  | M               | -               | -               |
+
 
  
 
