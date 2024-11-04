@@ -1,8 +1,9 @@
 const express = require('express');
-const { getDiningHalls, addDiningHall } = require('../controllers/diningController');
+const { fetchDiningData, addDiningHall } = require('../controllers/diningController');
 const router = express.Router();
 
-router.get('/', getDiningHalls);
+// Define routes and their callbacks
+router.get('/fetch-dining-data', fetchDiningData);
 router.post('/add', addDiningHall);
 
 module.exports = router;

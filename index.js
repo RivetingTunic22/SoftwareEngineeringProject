@@ -20,3 +20,7 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
   .catch(error => console.error("MongoDB connection error:", error));
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+app.get('/', (req, res) => {
+  res.send('Welcome to the Dining Hall Tracker API');
+});
