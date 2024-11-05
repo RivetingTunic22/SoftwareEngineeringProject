@@ -11,16 +11,3 @@ exports.fetchDiningData = async (req, res) => {
     res.status(500).json({ message: 'Failed to fetch data' });
   }
 };
-
-// Add new dining hall to the database
-exports.addDiningHall = async (req, res) => {
-  const { name, menu, openHours } = req.body;
-  try {
-    const newHall = new DiningHall({ name, menu, openHours });
-    await newHall.save();
-    res.status(201).json(newHall);
-  } catch (error) {
-    console.error('Error adding dining hall:', error);
-    res.status(500).json({ error: "Failed to add dining hall" });
-  }
-};
