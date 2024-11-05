@@ -1,0 +1,15 @@
+{
+  "name": "softwareengineeringproject-1",
+  "version": "1.0.0",
+  "description": "* Requirements\r   * [Functional Requirements](#functional-requirements)\r   * [Nonfunctional Requirements](#nonfunctional-requirements)\r   * [Security Requirements](#security-requirements)\r * [Technology Plan](#technology-plan)\r * Risk Analysis\r   * [Technical Risk by Business Goal](#technical-risk-by-business-goal)\r   * [Risk Mitigation Plan](#risk-mitigation-plan)\r * [Effort Estimate](#effort-estimate)\r * [Architectural Design](#architectural-design)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json": "^11.0.0"
+  }
+}
