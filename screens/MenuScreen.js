@@ -1,91 +1,69 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, Button, StyleSheet, ActivityIndicator, ScrollView } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, Button, ActivityIndicator, FlatList } from 'react-native';
+import { fetchMenuData } from '../BackEnd/src/api';
 
-export default function MenuScreen({ navigation }) {
-  const [menuData, setMenuData] = useState(null);
+
+const MenuScreen = () => {
+  const [menuData, setMenuData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [currentMeal, setCurrentMeal] = useState('breakfast');
 
-  // Fetch the menu data from the API
-  useEffect(() => {
-    const fetchMenuData = async () => {
-      try {
-        const response = await fetch(
-          'https://api.freshideasdining.com/v1/location/65b6be9ff3c61202b10b76c1/periods?platform=0&date=2024-10-22'
-        );
-        const data = await response.json();
-        setMenuData(data.menu.periods.categories);
-        setLoading(false);
-      } catch (err) {
-        setError('Failed to load menu data');
-        setLoading(false);
-      }
-    };
+  // Get the current date in 'YYYY-MM-DD' format
+  const currentDate = new Date().toISOString().split('T')[0];
 
-    fetchMenuData();
-  }, []);
+  // Fetch the menu data for the selected meal period
+  const loadMenuData = async (mealPeriod) => {
+    setLoading(true);
+    setError(null);
 
-  // Render the menu data
-  const renderMenuItems = () => {
-    return menuData.map((category, index) => (
-      <View key={index} style={styles.categoryContainer}>
-        <Text style={styles.categoryTitle}>{category.name}</Text>
-        {category.items.map((item, itemIndex) => (
-          <Text key={itemIndex} style={styles.menuItem}>
-            {item.name} - {item.portion}
-          </Text>
-        ))}
-      </View>
-    ));
+    try {
+      const data = await fetchMenuData(mealPeriod, currentDate);
+      setMenuData(data);
+    } catch (err) {
+      setError('Failed to load menu data');
+    } finally {
+      setLoading(false);
+    }
   };
 
-  return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.text}>Menu Screen</Text>
-      {loading && <ActivityIndicator size="large" color="#841584" />}
-      {error && <Text style={styles.errorText}>{error}</Text>}
-      {!loading && !error && menuData && renderMenuItems()}
-      <View style={styles.buttonContainer}>
-        <Button title="Sign Out" onPress={() => navigation.navigate('Login')} color="#841584" />
-        <Button title="Home" onPress={() => navigation.navigate('Landing')} color="#841584" />
-      </View>
-    </ScrollView>
-  );
-}
+  // Initial load for breakfast
+  useEffect(() => {
+    loadMenuData(currentMeal);
+  }, [currentMeal]);
 
-const styles = StyleSheet.create({
-  container: {
-    flexGrow: 1,
-    padding: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
-  },
-  errorText: {
-    color: 'red',
-    fontSize: 16,
-    marginBottom: 20,
-  },
-  categoryContainer: {
-    marginBottom: 20,
-  },
-  categoryTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-  menuItem: {
-    fontSize: 16,
-    marginBottom: 5,
-  },
-  buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '100%',
-    marginTop: 20,
-  },
-});
+  // Render item for the FlatList
+  const renderItem = ({ item }) => (
+    <View>
+      <Text style={{ fontWeight: 'bold' }}>{item.name}</Text>
+      {item.items && item.items.map((menuItem) => (
+        <Text key={menuItem.id}>{menuItem.name}</Text>
+      ))}
+    </View>
+  );
+
+  return (
+    <View style={{ padding: 20 }}>
+      <Text style={{ fontSize: 24, fontWeight: 'bold' }}>Dining Hall Menu</Text>
+      
+      <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginVertical: 10 }}>
+        <Button title="Breakfast" onPress={() => setCurrentMeal('breakfast')} />
+        <Button title="Lunch" onPress={() => setCurrentMeal('lunch')} />
+        <Button title="Dinner" onPress={() => setCurrentMeal('dinner')} />
+      </View>
+
+      {loading && <ActivityIndicator size="large" color="#0000ff" />}
+      {error && <Text style={{ color: 'red' }}>{error}</Text>}
+
+      {!loading && !error && (
+        <FlatList
+          data={menuData}
+          keyExtractor={(item) => item.id}
+          renderItem={renderItem}
+        />
+      )}
+    </View>
+  );
+};
+
+export default MenuScreen;
