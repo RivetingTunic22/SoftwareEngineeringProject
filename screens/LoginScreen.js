@@ -6,8 +6,11 @@ const [email, setEmail] = useState()
 const [pass, setPass] = useState()
   return (
     <View style={styles.container} >
-      <Text style={styles.text}>Login Screen</Text>
+      <Image source={require('../assets/logo.png')} style={styles.logo} />
+      <Text style={styles.title}>Drury Commons Dining Hall App</Text>
+      <Text style={styles.subtitle}>A more accurate glimpse at the day</Text>
       <View>
+        <Text style={styles.text}>Login</Text>
         <Text style={styles.subText}>E-Mail</Text>
         <TextInput 
         style={styles.input}
@@ -29,7 +32,7 @@ const [pass, setPass] = useState()
         </Pressable> 
       </View>
       <View style={styles.buttonContainer}>
-        <Button
+        {/* <Button
           title="View Menu"
           onPress={() => navigation.navigate('Menu')}
           color="#841584"
@@ -38,7 +41,7 @@ const [pass, setPass] = useState()
           title="Home"
           onPress={() => navigation.navigate('Landing')}
           color="#841584"
-        />
+        /> */}
       </View>
     </View>
   );
@@ -60,6 +63,24 @@ const styles = StyleSheet.create({
   subText: {
     fontSize: 20,
     alignSelf: 'center',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    textAlign: 'center',
+  },
+  subtitle: {
+    fontSize: 16,
+    color: '#666',
+    marginBottom: 5,
+    textAlign: 'center',
+  },
+  logo: {
+    width: 150, // Set the width to a larger size
+    height: 150, // Set the height to a larger size
+    alignSelf: 'center',
+    marginBottom:0,
   },
   input: {
     height: 40,
