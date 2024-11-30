@@ -1,73 +1,82 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, Button, ActivityIndicator, FlatList } from 'react-native';
+
+import React, { useEffect, useState } from 'react';
+import { View, Text, Button, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { fetchMenuData } from '../BackEnd/src/api';
 
-
-const MenuScreen = ({ navigation }) => {
+const MenuScreen = () => {
   const [menuData, setMenuData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [currentMeal, setCurrentMeal] = useState('breakfast');
+  const [selectedMenu, setSelectedMenu] = useState('breakfast'); // Default breakfast
+  const currentDate = '2024-11-25'; // fixed date for testing
 
-  // Get the current date in 'YYYY-MM-DD' format
-  const currentDate = new Date().toISOString().split('T')[0];
-
-  // Fetch the menu data for the selected meal period
-  const loadMenuData = async (mealPeriod) => {
-    setLoading(true);
-    setError(null);
-
-    try {
-      const data = await fetchMenuData(mealPeriod, currentDate);
-      setMenuData(data);
-    } catch (err) {
-      setError('Failed to load menu data');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  // Initial load for breakfast
   useEffect(() => {
-    loadMenuData(currentMeal);
-  }, [currentMeal]);
-
-  // Render item for the FlatList
-  const renderItem = ({ item }) => (
-    <View>
-      <Text style={{ alignSelf: 'center', fontWeight: 'bold', padding: 10, fontSize: 24}}>{item.name}</Text>
-      {item.items && item.items.map((menuItem) => (
-        <Text style= {{ alignSelf: 'center', fontSize: 16}} key={menuItem.id}>{menuItem.name}</Text>
-      ))}
-    </View>
-  );
+    fetchMenuData(selectedMenu, currentDate)
+      .then((data) => setMenuData(data))
+      .catch((error) => console.error('Error fetching menu data:', error));
+  }, [selectedMenu]); 
 
   return (
-    <View style={{ padding: 20 }}>
-      <Text style={{ fontSize: 24, fontWeight: 'bold', alignSelf: 'center', padding: 10 }}>Dining Hall Menu</Text>
-      
-      <View style={{ alignSelf: 'center', backgroundColor: '#DDDDDD', padding: 5, borderRadius: 5, flexDirection: 'row',}}>
-        <Button title="Breakfast" onPress={() => setCurrentMeal('breakfast')} />
-        <Button title="Lunch" onPress={() => setCurrentMeal('lunch')} />
-        <Button title="Dinner" onPress={() => setCurrentMeal('dinner')} />
+    <View style={styles.container}>
+      <Text style={styles.header}>Dining Hall Menu</Text>
+      <View style={styles.menuTabs}>
+        <TouchableOpacity
+          style={[
+            styles.tab,
+            selectedMenu === 'breakfast' && styles.activeTab,
+          ]}
+          onPress={() => setSelectedMenu('breakfast')}
+        >
+          <Text style={styles.tabText}>Breakfast</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[
+            styles.tab,
+            selectedMenu === 'lunch' && styles.activeTab,
+          ]}
+          onPress={() => setSelectedMenu('lunch')}
+        >
+          <Text style={styles.tabText}>Lunch</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[
+            styles.tab,
+            selectedMenu === 'dinner' && styles.activeTab,
+          ]}
+          onPress={() => setSelectedMenu('dinner')}
+        >
+          <Text style={styles.tabText}>Dinner</Text>
+        </TouchableOpacity>
       </View>
-      <Button
-          title="Sign Out"
-          onPress={() => navigation.navigate('Login')}
-          color="#841584"
-        />
-      {loading && <ActivityIndicator size="large" color="#0000ff" />}
-      {error && <Text style={{ color: 'red' }}>{error}</Text>}
-
-      {!loading && !error && (
-        <FlatList style={{alignSelf: 'center', width: 'auto', height: 670,}}
-          data={menuData}
-          keyExtractor={(item) => item.id}
-          renderItem={renderItem}
-        />
-      )}
+      <ScrollView style={styles.menuContainer}>
+        {menuData.map((category, index) => (
+          <View key={index} style={styles.categoryContainer}>
+            <Text style={styles.categoryTitle}>{category.name}</Text>
+            {category.items.map((item, itemIndex) => (
+              <View key={itemIndex} style={styles.itemContainer}>
+                <Text style={styles.itemName}>{item.name}</Text>
+                <Text style={styles.itemDetails}>Allergens: {item.filters?.filter(filter => filter.type === 'allergen').map(allergen => allergen.name).join(', ') || 'None'}</Text>
+                <Text style={styles.itemDetails}>Calories: {item.calories || 'Unknown'}</Text>
+              </View>
+            ))}
+          </View>
+        ))}
+      </ScrollView>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: { flex: 1, padding: 16, backgroundColor: '#fff' },
+  header: { fontSize: 24, fontWeight: 'bold', textAlign: 'center', marginVertical: 16 },
+  menuTabs: { flexDirection: 'row', justifyContent: 'center', marginBottom: 16 },
+  tab: { paddingHorizontal: 16, paddingVertical: 8, marginHorizontal: 4, borderRadius: 4, backgroundColor: '#ddd' },
+  activeTab: { backgroundColor: '#6200ea' },
+  tabText: { color: '#fff', fontWeight: 'bold' },
+  menuContainer: { flex: 1 },
+  categoryContainer: { marginBottom: 16 },
+  categoryTitle: { fontSize: 18, fontWeight: 'bold', marginBottom: 8 },
+  itemContainer: { padding: 8, backgroundColor: '#f9f9f9', borderRadius: 4, marginBottom: 8 },
+  itemName: { fontSize: 16, fontWeight: 'bold' },
+  itemDetails: { fontSize: 14, color: '#555' },
+});
 
 export default MenuScreen;
