@@ -1,18 +1,17 @@
-
 import React, { useEffect, useState } from 'react';
-import { View, Text, Button, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { fetchMenuData } from '../BackEnd/src/api';
 
 const MenuScreen = () => {
   const [menuData, setMenuData] = useState([]);
   const [selectedMenu, setSelectedMenu] = useState('breakfast'); // Default breakfast
-  const currentDate = '2024-11-25'; // fixed date for testing
+  const currentDate = '2024-11-25'; // Fixed date for testing
 
   useEffect(() => {
     fetchMenuData(selectedMenu, currentDate)
       .then((data) => setMenuData(data))
       .catch((error) => console.error('Error fetching menu data:', error));
-  }, [selectedMenu]); 
+  }, [selectedMenu]);
 
   return (
     <View style={styles.container}>
@@ -69,11 +68,11 @@ const styles = StyleSheet.create({
   header: { fontSize: 24, fontWeight: 'bold', textAlign: 'center', marginVertical: 16 },
   menuTabs: { flexDirection: 'row', justifyContent: 'center', marginBottom: 16 },
   tab: { paddingHorizontal: 16, paddingVertical: 8, marginHorizontal: 4, borderRadius: 4, backgroundColor: '#ddd' },
-  activeTab: { backgroundColor: '#6200ea' },
+  activeTab: { backgroundColor: 'red' },
   tabText: { color: '#fff', fontWeight: 'bold' },
   menuContainer: { flex: 1 },
   categoryContainer: { marginBottom: 16 },
-  categoryTitle: { fontSize: 18, fontWeight: 'bold', marginBottom: 8 },
+  categoryTitle: { fontSize: 22, fontWeight: 'bold', textAlign: 'center', marginBottom: 8}, 
   itemContainer: { padding: 8, backgroundColor: '#f9f9f9', borderRadius: 4, marginBottom: 8 },
   itemName: { fontSize: 16, fontWeight: 'bold' },
   itemDetails: { fontSize: 14, color: '#555' },
