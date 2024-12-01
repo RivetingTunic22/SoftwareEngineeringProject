@@ -57,8 +57,6 @@ The following technology plan lists potential technologies to be used in the cre
 | Expo                            | Moderate                |
 | **Application and Web Development** |                     |
 | JavaScript                     | Moderate                |
-| HTML 5                         | Moderate                |
-| Bootstrap Framework            | Tutorial                |
 | **Web Server Scripting**        |                         |
 | Node.js                        | Moderate                |
 
