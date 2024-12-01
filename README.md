@@ -114,21 +114,11 @@ The following effort estimate has been calculated using NOP (nominal object poin
 |    Authentication Routes | High | 3 | Build login, signup, logout routes  |
 |    Middleware for Route Protection | Medium | 2 | Implement JWT-based authetication |
 |    Error Handling  | Simple | 1 | Add detiled error responses or auth endpoints |
-|    Watch Video | Simple | 1 | Embedded video viewer |
-|    Leave Comment | Simple | 1 | Simple input of text |
-|    Read Comments | Simple | 1 | Simple display of text extracted from data table |
-|    View on Google Earth | Simple | 1 | Simple linke, but will require scripting for Google Earth |
-| Setup Hike Mode | Simple | 1 | Simple screen |
-| GPS Trail Guide | Medium | 2 | Complex screen drawing from multiple local data sources |
-| Create Trail Entry | Simple | 1 | Simple data entry screen |
-| Edit Trail Entry | Simple | 1 | Simple data update |
-| *Screen Total* | | 16 | |
-| **3GL Components** | | | |
-| Map Components | 2 @ 10 | 20 | Map interaction and hike data management components |
-| Google Earth Interaction | 1 | 10 | Component to link hike to Google Earth |
-| Standalone GPS Mode | 1 | 10 | Component to manage map and data in standalone GPS mode |
-| Server Components | 2 @ 10 | 20 | Server-side scripts for managing mobile interaction and hike data |
-| **Total Object Points** | | 76 | |
+| **MongoDB Integration** | | | | 
+| Connection and schema setup | Medium | 2 | Define Models (User Schema) |
+| CRUD Operations | Simple | 1 | Implement basic database operations |
+| Test database interactions | Simple | 1 | Validate queries, debug, connection issues |
+| **Total Object Points** | | 17 | |
 
 
 <div name="architectural-design">
