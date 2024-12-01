@@ -117,7 +117,7 @@ The following effort estimate has been calculated using NOP (nominal object poin
 | **MongoDB Integration** | | | | 
 | Connection and schema setup | Medium | 2 | Define Models (User Schema) |
 | CRUD Operations | Simple | 1 | Implement basic database operations |
-| Test database interactions | Simple | 1 | Validate queries, debug, connection issues |
+| Test database interactions | Simple | 1 | Debug, connection issues |
 | **Total Object Points** | | 17 | |
 
 
