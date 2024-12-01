@@ -108,7 +108,7 @@ The following effort estimate has been calculated using NOP (nominal object poin
 
 | Artifacts | Complexity | Object Points | Notes |
 |-----------|------------|---------------|-------|
-| **Screens** | | | |
+| **API Menu Screen** | | | |
 | Fetch API Data | Medium | 2 | Fetch menu data from the fresh ideas API |
 | Parse and Display Data | Medium | 2 | Display data in a readable format on menu screen |
 |    Sub-screens | | | |
