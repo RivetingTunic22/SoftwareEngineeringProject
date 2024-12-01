@@ -108,12 +108,12 @@ The following effort estimate has been calculated using NOP (nominal object poin
 |-----------|------------|---------------|-------|
 | **Menu Screen** | | | |
 | Fetch API Data | Medium | 2 | Fetch menu data from the fresh ideas API |
-| Parse and Display Data | High | 3 | Display data in a readable format on menu screen |
+| Parse and Display Data | High | 3 | Display data in a readable format on menu scree |
 | Navigation Between Meal Periods | Medium | 2 | Switch between breakfast, lunch, and dinner |
 | **Login Screen** | | | |
-|    Read About | Simple | 1 | Simple text with some images in the screen |
-|    View Hike | Medium | 2 | Must position on a map and allow for zoom with different sized devices |
-|    Driving Directions | Simple | 1 | Will have to query map server to get the directions |
+|    Authentication Routes | High | 3 | Build login, signup, logout routes  |
+|    Middleware for Route Protection | Medium | 2 | Implement JWT-based authetication |
+|    Error Handling  | Simple | 1 | Add detiled error responses or auth endpoints |
 |    Watch Video | Simple | 1 | Embedded video viewer |
 |    Leave Comment | Simple | 1 | Simple input of text |
 |    Read Comments | Simple | 1 | Simple display of text extracted from data table |
