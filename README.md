@@ -110,7 +110,7 @@ The following effort estimate has been calculated using NOP (nominal object poin
 |-----------|------------|---------------|-------|
 | **Screens** | | | |
 | Fetch API Data | Medium | 2 | Fetch menu data from the fresh ideas API |
-| Explore Hikes | Medium | 2 | Screen will have several components drawing data from different sources |
+| Parse and Display Data | Medium | 2 | Display data in a readable format on menu screen |
 |    Sub-screens | | | |
 |    Read About | Simple | 1 | Simple text with some images in the screen |
 |    View Hike | Medium | 2 | Must position on a map and allow for zoom with different sized devices |
