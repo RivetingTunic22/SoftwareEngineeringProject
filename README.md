@@ -22,15 +22,10 @@ The following actors and use cases have been identified for the Drury Commons Me
 #### Actors
 | Actor | Description |
 |-------|-------------|
-| User | A user is a student who uses the app to view the menu and can edit and confirm menu items |
-| Admin | The admin is a person who can publish and edit the menu. Note that an admin can use the app as a user would and is thus a user. A user, however, is not an Admin |
+| User | A user is a student who uses the app to view the menu and can view allergens of food items. |
 
 #### Use Cases
-* View Menu - A user can look at the menu, which should contain the name, the station it is served at, and any dietary restrictions an item might have
-* Edit Menu - A user can change whatever item was published to another item.
-* Confirm Menu - A user can confirm any changes a menu might have to ensure a menu's accuracy
-* Add Menu Items - An admin can add menu items to the current menu.
-* Publish Menu - An admin can publish the menu they have set.
+* View Menu - A user can look at the menu, which should contain the name, the station it is served at, and any dietary restrictions an item might have.
 
 <div name="nonfunctional-requirements">
   <h3>Nonfunctional Requirements</h3>
@@ -48,9 +43,7 @@ The following security requirements will be satisfied.
 
 * Data Encryption: All senstitive data that is exchanged between users will be encrpyted using HTTPS and Transport Layer Security (TLS) to protect against eavesdropping and data tampering.
 * Input Validation: All of the users' input will be validated and sanitized to prevent malicious data from being processed. 
-* Audit Logging: The application will maintain a comprehensive audit log to record significat actions performed by the users and admin. It will capture the user's id, timestamp, description of action, and changes made.
 * User Authentication: All users will authenticate using secure credentials (user name and password). Passwords will be stored using strong hashing algorithms.
-* Role-Based Action Control: The application will managed user permissions, and access control checks will be enforced to ensure only authroized users can perform specific actions. 
 
 <div name="technology-plan">
   <h2>Technology Plan</h2>
@@ -144,6 +137,6 @@ The following effort estimate has been calculated using NOP (nominal object poin
 </div>
 The following deployment diagram represents the architectural (high-level) design of the Dining Hall Appliation.
 
-![image](https://raw.githubusercontent.com/RivetingTunic22/SoftwareEngineeringProject/688df9a8bf84f2f9bd08c2ee5ce18f69602435b6/IMG_2160.jpeg?token=GHSAT0AAAAAACXENGEEFOEUWCQLLPVCLFUKZYW3HFQ)
+![image](IMG_2160.jpeg)
 
 The basic architecture of the Dining Hall app has four components: a component that runs on a mobile device, a map server, an administrative component, and a server component. Components will communicate over the Internet. The details of the architecture are specified in Figure 7.5. Notice that the administrative componet-server component communication is specified at two levels. The devices communicate using the Internet while the browser and the web server communicate using the http protocol.
