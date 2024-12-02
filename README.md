@@ -126,7 +126,7 @@ The following effort estimate has been calculated using NOP (nominal object poin
 </div>
 The following deployment diagram represents the architectural (high-level) design of the Dining Hall Appliation.
 
-![image](architectural design.png)
+![image](architecturaldesign.png)
 
 Front-End
 The front-end of the application is developed using React Native and Expo, providing a responsive and user-friendly interface. This layer handles:
