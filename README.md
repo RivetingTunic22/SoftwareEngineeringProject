@@ -128,4 +128,31 @@ The following deployment diagram represents the architectural (high-level) desig
 
 ![image](archimg.png)
 
-The basic architecture of the Dining Hall app has four components: a component that runs on a mobile device, a map server, an administrative component, and a server component. Components will communicate over the Internet. The details of the architecture are specified in Figure 7.5. Notice that the administrative componet-server component communication is specified at two levels. The devices communicate using the Internet while the browser and the web server communicate using the http protocol.
+Front-End
+The front-end of the application is developed using React Native and Expo, providing a responsive and user-friendly interface. This layer handles:
+
+Login Form: A clean and intuitive form for user authentication.
+API Requests: Communication with the back-end to send and retrieve data securely.
+Testing & Debugging: Ensuring the front-end is error-free and optimized for performance.
+By using React Native, the application is cross-platform and can run on both Android and iOS devices.
+
+Back-End
+The back-end is built with Node.js and Express.js, ensuring robust and efficient server-side logic. Key responsibilities include:
+
+RESTful APIs: Implementation of RESTful endpoints for seamless data exchange between the client and the server.
+Middleware: Layers to handle request validation, error handling, and other pre-processing tasks.
+Authentication Logic: Secure user authentication using techniques such as JWT (JSON Web Tokens) or sessions.
+This layer ensures data integrity and provides a bridge between the front-end and the database.
+
+Database
+The database layer utilizes MongoDB Atlas, a cloud-based NoSQL database solution, to store and manage user data. Key components include:
+
+User Collection: A dedicated collection to store user information, such as usernames, email addresses, and other relevant details.
+Password Hashing: For security, all passwords are hashed using a secure algorithm (e.g., bcrypt) before storage.
+MongoDB Atlas offers scalability, high availability, and easy management, making it an ideal choice for this application.
+
+Data Flow
+The Front-End sends user inputs (e.g., login credentials) via API requests to the Back-End.
+The Back-End processes these requests, applying middleware and business logic, and communicates with the Database.
+The Database responds with the requested data or confirmation, which is passed back through the Back-End to the Front-End for display.
+This architecture ensures separation of concerns, scalability, and maintainability, enabling efficient development and future expansion.
