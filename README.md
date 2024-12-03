@@ -165,17 +165,20 @@ Week: 11/3/2024 to 12/1/2024
 Project: Dining Hall App
 Total Hours Worked: 29
 
-Date	Start	Finish	Time	Code	Activity
-11/3	2:00 p.m.	3:00 p.m.	1.0	60	Set up the development environment.
-11/3	3:00 p.m.	4:00 p.m.	1.0	30	Designed a new logo for the application.
-11/3	4:00 p.m.	5:00 p.m.	1.0	40	Updated the project to React Native.
-11/10	1:00 p.m.	4:00 p.m.	3.0	40	Integrated API calls to display the menu; added and tested api.js and updated MenuScreen.js.
-11/20	10:00 a.m.	12:00 p.m.	2.0	80	Conducted research on backend and database implementation.
-11/20	12:00 p.m.	2:00 p.m.	2.0	20	Analyzed backend and database implementation options.
-11/21	3:00 p.m.	4:00 p.m.	1.0	70	Evaluated backend integration progress using Render.
-11/24	10:00 a.m.	4:00 p.m.	6.0	40	Set up the backend, successfully tested API calls using Postman, and fetched menu data.
-11/30	1:00 p.m.	5:00 p.m.	4.0	30	Styled the application with CSS and updated the menu to display allergen information.
-12/1	2:00 p.m.	4:00 p.m.	2.0	70	Prepared the final presentation and updated the README to reflect project changes.
+### TimeSheet:
+
+| **Date** | **Start**  | **Finish** | **Time** | **Code** | **Activity**                                                                                     |
+|----------|------------|------------|----------|----------|--------------------------------------------------------------------------------------------------|
+| 11/3     | 2:00 p.m.  | 3:00 p.m.  | 1.0      | 60       | Set up the development environment.                                                             |
+| 11/3     | 3:00 p.m.  | 4:00 p.m.  | 1.0      | 30       | Designed a new logo for the application.                                                        |
+| 11/3     | 4:00 p.m.  | 5:00 p.m.  | 1.0      | 40       | Updated the project to React Native.                                                            |
+| 11/10    | 1:00 p.m.  | 4:00 p.m.  | 3.0      | 40       | Integrated API calls to display the menu; added and tested `api.js` and updated `MenuScreen.js`. |
+| 11/20    | 10:00 a.m. | 12:00 p.m. | 2.0      | 80       | Conducted research on backend and database implementation.                                      |
+| 11/20    | 12:00 p.m. | 2:00 p.m.  | 2.0      | 20       | Analyzed backend and database implementation options.                                           |
+| 11/21    | 3:00 p.m.  | 4:00 p.m.  | 1.0      | 70       | Evaluated backend integration progress using Render.                                            |
+| 11/24    | 10:00 a.m. | 4:00 p.m.  | 6.0      | 40       | Set up the backend, successfully tested API calls using Postman, and fetched menu data.         |
+| 11/30    | 1:00 p.m.  | 5:00 p.m.  | 4.0      | 30       | Styled the application with CSS and updated the menu to display allergen information.           |
+| 12/1     | 2:00 p.m.  | 4:00 p.m.  | 2.0      | 70       | Prepared the final presentation and updated the README to reflect project changes.              |
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
