@@ -181,4 +181,20 @@ Total Hours Worked: 29
 | 12/1     | 2:00 p.m.  | 4:00 p.m.  | 2.0      | 70       | Prepared the final presentation and updated the README to reflect project changes.              |
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Senior Project Timecard
+Name: Elijah Dean
+Week: 10/14/2024 to 12/1/2024
+Project: Dining Hall App
+Total Hours Worked: 8
+
+### TimeSheet:
+
+| **Date** | **Start**  | **Finish** | **Time** | **Code** | **Activity**                                                                                     |
+|----------|------------|------------|----------|----------|--------------------------------------------------------------------------------------------------|
+| 10/14    | 4:30 p.m.  | 5:30 p.m.  | 1.0      | 90       | Set up github environment and added team members to the project.                                 |
+| 11/4     | 1:00 p.m.  | 3:00 p.m.  | 2.0      | 30       | Created splash animation of the logo Lauren created for the app.                                 |
+| 11/20    | 11:00 p.m. | 2:00 a.m.  | 3.0      | 80       | Researched bcrypt to help implement.                                                             |
+| 12/1     | 2:00 p.m.  | 4:00 p.m.  | 2.0      | 30       | Created illustration for final presentation, updated read me, and set up color theme for presentation.|
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
