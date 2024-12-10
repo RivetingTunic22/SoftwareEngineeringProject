@@ -197,4 +197,21 @@ Total Hours Worked: 8
 | 12/1     | 2:00 p.m.  | 4:00 p.m.  | 2.0      | 30       | Created illustration for final presentation, updated read me, and set up color theme for presentation.|
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**Name:** Khania   
+**Week:** 11/01/2024 to 12/02/2024  
+**Project:** Dining Hall App  
+**Total Hours Worked:** 29  
+
+| **Date**     | **Start**  | **Finish** | **Time** | **Code** | **Activity**                                |
+|--------------|------------|------------|----------|----------|--------------------------------------------|
+| 11/03/2024   | 2:00 p.m.  | 4:00 p.m.  | 2.0      | 10       | Team meeting to discuss initial app design |
+| 11/09/2024   | 4:00 p.m.  | 7:00 p.m.  | 3.0      | 40       | Continued development and debugging         |
+| 11/13/2024   | 11:00 a.m. | 3:00 p.m.  | 4.0      | 40       | Worked on database design and integration   |
+| 11/14/2024   | 2:00 p.m.  | 4:00 p.m.  | 2.0      | 10       | Team meeting to discuss progress and next steps |
+| 11/18/2024   | 9:00 p.m.  | 11:30 p.m. | 2.5      | 40       | Worked on backend development and functionality |
+| 11/21/2024   | 2:00 p.m.  | 4:00 p.m.  | 2.0      | 30       | Analyzed front-end progress                |
+| 11/24/2024   | 5:00 p.m.  | 7:30 p.m.  | 2.5      | 40       | Worked on user authentication features     |
+| 11/27/2024   | 11:00 a.m. | 5:00 p.m.  | 6.0      | 50       | Debugged and tested API requests using Postman |
+| 12/01/2024   | 10:00 a.m. | 1:00 p.m.  | 3.0      | 70       | Finished product and prepared for final presentation |
+| 12/02/2024   | 2:00 p.m.  | 4:00 p.m.  | 2.0      | 70       | Group practiced final presentation         |
 
